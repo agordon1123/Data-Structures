@@ -1,6 +1,6 @@
 import sys
-# sys.path.append('../doubly_linked_list')
 from doubly_linked_list import DoublyLinkedList
+sys.path.append('../doubly_linked_list')
 
 class Stack:
     def __init__(self):
@@ -10,13 +10,14 @@ class Stack:
         self.storage = DoublyLinkedList()
 
     def push(self, value):
+        
         self.storage.add_to_tail(value)
         self.size += 1
 
     def pop(self):
         if self.size == 0:
             return 
-            
+
         self.size -= 1
         return self.storage.remove_from_tail()
 
